@@ -22,21 +22,30 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    jcenter()
+    //jcenter()
 }
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.projectlombok:lombok')
-    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-    implementation('org.springframework.boot:spring-boot-starter-mustache')
-    implementation('com.h2database:h2')
+    //implementation('org.projectlombok:lombok')
 
-    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
-    implementation('org.springframework.session:spring-session-jdbc')
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-    implementation("org.mariadb.jdbc:mariadb-java-client")
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-    //testCompile('org.springframework.boot:spring-boot-starter-test')
-    //testCompile("org.springframework.security:spring-security-test")
+
+    //implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    //implementation('org.springframework.boot:spring-boot-starter-mustache')
+    //implementation('com.h2database:h2')
+
+    //implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+    //implementation('org.springframework.session:spring-session-jdbc')
+
+    //implementation("org.mariadb.jdbc:mariadb-java-client")
+    testImplementation 'junit:junit:4.13.1'
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    //testImplementation("org.springframework.security:spring-security-test")
 }
